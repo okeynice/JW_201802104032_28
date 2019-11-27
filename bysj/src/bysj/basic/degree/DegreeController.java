@@ -56,6 +56,7 @@ public class DegreeController extends HttpServlet {
         response.getWriter().println(message);
     }
 
+
     /**
      * DELETE, http://49.234.223.174:8080/degree.ctl?id=1, 删除id=1的学位
      * 删除一个学位对象：根据来自前端请求的id，删除数据库表中id的对应记录
