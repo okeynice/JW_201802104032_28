@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "e144660a-6941-492a-9171-b53893369f96",
+		"name": "degree",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/degree.ctl?id=1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"博士\",\r\n        \"no\": \"1\",\r\n        \"remarks\": \"\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/degree.ctl?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"博士\",\r\n        \"no\": \"1\",\r\n        \"remarks\": \"\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/degree.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"博士\",\r\n        \"no\": \"2\",\r\n        \"remarks\": \"\",\r\n        \"id\":7\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/degree.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/degree.ctl",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"博士\",\r\n        \"no\": \"2\",\r\n        \"remarks\": \"\",\r\n        \"id\":7\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/degree.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"degree.ctl"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

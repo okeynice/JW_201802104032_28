@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "1ca6d451-1f01-4b45-a0cc-c5459eaf7320",
+		"name": "department",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd0298f0-2f39-42a3-8412-5386c882a197",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"增加成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n       \"description\": \"工业工程\",\r\n        \"no\": \"5\",\r\n        \"remarks\": \"\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:8080/department.ctl?id=7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cf4a71e-20ee-4e93-9b44-ab9b62e58d02",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"删除成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n       \"description\": \"工业工程\",\r\n        \"no\": \"5\",\r\n        \"remarks\": \"222222222llllo\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department.ctl?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c5aab15-4f52-4687-944b-a43327bd828a",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"修改成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n       \"description\": \"工业工程\",\r\n        \"no\": \"5\",\r\n        \"remarks\": \"222222222llllo\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/department.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a599387a-0eb7-4353-a111-183b4321d8af",
+						"exec": [
+							"tests[\"Body matches string\"]=responseBody.has(\"信息管理\");",
+							"tests[\"Body matches string\"]=responseBody.has(\"工业工程\");",
+							"tests[\"Body matches string\"]=responseBody.has(\"土地资源管理\");",
+							"tests[\"Body matches string\"]=responseBody.has(\"房地产开发\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"硕士\",\r\n        \"no\": \"1\",\r\n        \"remarks\": \"\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/department.ctl?id=8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a8e97728-f1f9-47f5-9e51-ddac54a55137",
+						"exec": [
+							"tests[\"Body matches string\"]=responseBody.has(\"工业工程\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n       \"description\": \"工业工程\",\r\n        \"no\": \"5\",\r\n        \"remarks\": \"222222222llllo\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department.ctl?id=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

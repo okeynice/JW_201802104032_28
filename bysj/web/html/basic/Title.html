@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>title</title>
+    <script src="../../js/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+                $.ajax({
+                url : "/title/list.ctl",
+                type : "get",
+
+                success : function(msg) {//请求成功的回调方法
+                    var titles = eval("(" + msg + ")");//json字串->jQuery对象,方便遍历
+                    var table = "<tr><td>id</td><td>编号</td><td>名称</td><td>描述</td><td>删除栏</td></tr>";
+                    for (var i in titles){
+                        table += "<tr>"
+                            +"<td>" + titles[i].id + "</td>"
+                            +"<td>" + titles[i].no + "</td>"
+                            +"<td>" + titles[i].description + "</td>"
+                            +"<td>" + titles[i].remarks + "</td>"
+                                + "<td>"
+                                + "<a href='' onclick=deleteTitle(" + titles[i].id + ")>delete</a>"
+                                +"</td>"
+                            + "</tr>";
+
+                    }
+                    $("#table").html(table);
+
+                },
+                error:function(){  //请求失败的回调方法
+                    alert("请求失败，请重试!");
+                }
+            });
+        });
+        function deleteTitle(id) {
+            confirm_ = confirm('确认删除?');
+            // alert(id);
+            if(confirm_){
+                $.ajax({
+                    type:"get",
+                    url:"/title/delete.ctl",
+                    //请求后台时所传递的参数
+                    data:{
+                        "id":id
+                    },
+                    //参数类型为json
+                    contentType: "application/json,charset = utf-8",
+                    //返回值格式为json
+                    dataType:"json",
+                    success:function(msg){
+                        // 因为本次请求的url会被重定向到degree.html，所以正常情况下，这里不会返回信息
+                    },
+                    error:function () {
+                        alert("error");
+                    }
+                });
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+
+<table border = "1px" bgcolor="#ffe4c4" id = "table">
+</table>
+
+</body>
+</html>

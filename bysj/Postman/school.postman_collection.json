@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "04383369-c31e-4056-ad6c-d9dbb371ccf4",
+		"name": "school",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST http://localhost:8080/school.ctl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"description\": \"德玛学院\",\r\n\r\n        \"no\": \"02\",\r\n        \"remarks\": \"啦啦啦啦啦学院\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:8080/school.ctl?id=80",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/school.ctl?id=80",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/school.ctl",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"description\": \"管理工程\",\r\n        \"id\": 18,\r\n        \"no\": \"02\",\r\n        \"remarks\": \"啦啦啦啦啦学院\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/school.ctl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/school.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/school.ctl?id=2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"01\",\r\n        \"no\": \"土木工程\",\r\n        \"remarks\": \"555\",\r\n        \"id\": 5\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/school.ctl?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"school.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

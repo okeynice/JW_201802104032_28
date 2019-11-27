@@ -1,0 +1,55 @@
+-- auto-generated definition
+create table degree
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null
+);
+
+
+-- auto-generated definition
+create table department
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null,
+    school_id   int          not null
+);
+
+-- auto-generated definition
+create table
+proTitle
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null
+);
+
+-- auto-generated definition
+create table school
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null,
+    constraint no
+        unique (no)
+);
+
+-- auto-generated definition
+create table teacher
+(
+    id          bigint auto_increment
+        primary key,
+    description varchar(255) not null,
+    no          varchar(255) not null,
+    remarks     varchar(255) null
+);
+

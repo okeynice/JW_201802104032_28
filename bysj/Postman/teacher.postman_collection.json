@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "0f024b10-bbf8-41dc-be4a-733eddc64237",
+		"name": "teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd818fb6-58f2-44ed-acef-692be5baa318",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"增加成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"degree\": {\r\n        \"description\": \"硕士\",\r\n        \"id\": 23,\r\n        \"no\": \"2\",\r\n        \"remarks\": \"\"\r\n    },\r\n    \"department\": {\r\n        \"description\": \"信息管理\",\r\n        \"id\": 2,\r\n        \"no\": \"1\",\r\n        \"remarks\": \" the best\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    },\r\n\r\n    \"name\": \"孙悟空\",\r\n    \"title\": {\r\n        \"description\": \"计算机\",\r\n        \"id\": 3,\r\n        \"no\": \"3\",\r\n        \"remarks\": \"\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1dae8ca9-01a3-4858-bec0-b4eeacab9c0d",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"删除成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?id=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "66f5b4d5-86b6-4f48-bda8-22c5121d0e6d",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"update response\"]=jsonData.message===\"修改成功\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"degree\": {\r\n        \"description\": \"硕士\",\r\n        \"id\": 23,\r\n        \"no\": \"2\",\r\n        \"remarks\": \"\"\r\n    },\r\n    \"department\": {\r\n        \"description\": \"信息管理\",\r\n        \"id\": 2,\r\n        \"no\": \"1\",\r\n        \"remarks\": \" the best\",\r\n        \"school\": {\r\n            \"description\": \"2\",\r\n            \"id\": 6,\r\n            \"no\": \"管理工程\",\r\n            \"remarks\": \"the best\"\r\n        }\r\n    },\r\n    \"id\": 10,\r\n    \"name\": \"孙悟空111\",\r\n    \"title\": {\r\n        \"description\": \"计算机\",\r\n        \"id\": 3,\r\n        \"no\": \"3\",\r\n        \"remarks\": \"\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?id=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/teacher.ctl",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8f1ebee1-6ca7-4f98-b40f-d5d1d9bac3e5",
+						"exec": [
+							"tests[\"Body matches string\"]=responseBody.has(\"博士\");",
+							"tests[\"Body matches string\"]=responseBody.has(\"硕士\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET http://localhost:8080/teacher.ctl?id=5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "296a2f9d-1d25-46dc-b945-09d3b835abe1",
+						"exec": [
+							"tests[\"Body matches string\"]=responseBody.has(\"研究生\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/teacher.ctl?id=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teacher.ctl"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
